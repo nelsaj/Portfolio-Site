@@ -20,7 +20,7 @@ function render (instance_DOM) {
         <div class="line"></div>
 
         <div id="contact_list">
-            <h3>✳ nsajland@icloud.com</h3>
+            <h3>✳ nelly.sajland@gmail.com</h3>
             <h3>✳ 076 140 40 10</h3>
         </div>
 
