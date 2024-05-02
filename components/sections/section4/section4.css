@@ -161,9 +161,9 @@
         justify-content: center;
     }
 
-    svg {
-        height: 85%;
-        width: 85%;
+    #svg_holder svg {
+        height: 90%;
+        width: 90%;
     }
 
     #section4 h1 {
