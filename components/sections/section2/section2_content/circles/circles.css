@@ -1,0 +1,46 @@
+#circles_container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+
+    z-index: 0;
+
+    overflow: visible;
+    
+}
+#circles_container .circle {
+    /* background-color: aqua; */
+    position: absolute;
+
+    filter: blur(30px);
+}
+
+#circle_0{
+    top: 20%;
+    right: 10%;
+    height: 300px;
+    width: 300px;
+    background: var(--gradient-blue);
+}
+#circle_1{
+    top: 40%;
+    left: 5%;
+    height: 500px;
+    width: 500px;
+    background: var(--gradient-green);
+}
+#circle_2{
+    bottom: 10%;
+    right: 20%;
+    height: 200px;
+    width: 200px;
+    background: var(--gradient-pink);
+    
+}
+
+@media (max-width: 760px) {
+    #circle_0{ right: -10% }
+    #circle_1{ left: -15% }
+    #circle_2{ right: 10%; bottom: 12%; }
+}

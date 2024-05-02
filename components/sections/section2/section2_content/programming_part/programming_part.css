@@ -1,0 +1,27 @@
+#programming_part {
+    font-family: "Cutive Mono", monospace;
+    transition: backgroundColor 3s;
+
+}
+#programming_part * {
+    line-height: 30px;
+}
+#programming_part p {
+    margin-left: 30px;
+}
+#programming_part span {
+    font-style: italic;
+    opacity: 0.6;
+}
+
+#program_extraBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 760px) {
+    #programming_part p {
+        margin-left: 0;
+    } 
+}

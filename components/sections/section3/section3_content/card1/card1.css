@@ -1,0 +1,41 @@
+#card1 {
+
+    /* transform: translate(
+        var(--counterX), 
+        var(--counterY)
+    ); */
+    /* transition: transform .1s; */
+
+    animation-delay: 0s;
+
+}
+
+
+/* #card1 .pictureContainer {
+    --picturecontainer_height: 150px;
+
+    width: 100%;
+    height: var(--picturecontainer_height);
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 15px 0 15px 0;
+    padding-left: 35px;
+} */
+#card1 .pictureContainer .circle {
+    background: var(--gradient-pink);
+}
+#card1 .picture {
+    /* position: absolute; */
+    /* left: 60px; */
+
+    background-color: #2C2C2C;
+    background-image: url("../../../../../imgs/tipsy.png");
+}
+
+#card1 .textContent {
+    text-align: end;
+    align-self: flex-end;
+}
+
+

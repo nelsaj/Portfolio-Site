@@ -1,0 +1,43 @@
+#design_part {
+    align-self: end;
+    transition: backgroundColor 3s;
+}
+#design_part * {
+    text-align: end;
+    font-family: "Varela Round", sans-serif;
+    line-height: 35px;
+    overflow: hidden;
+}
+
+#design_part h1, #design_part h3 {
+    /* font-family: "Playfair Display", serif; */
+}
+
+#design_part span {
+    font-style: italic;
+    /* position: relative; */
+    /* padding: 5px; */
+}
+
+#design_part p, #design_part li {
+    margin-right: 40px;
+}
+
+@media (max-width: 760px) {
+    #design_part p {
+        margin-right: 0;
+    } 
+}
+
+/* .highlight_pink {
+    background-color:rgba(184, 255, 84, 0.5);
+}
+.highlight_orange {
+    background-color: rgba(255, 163, 70, 0.5)
+}
+.highlight_blue {
+    background-color: rgba(135, 207, 235, 0.5);
+}
+.highlight_purple {
+    background-color: rgba(238, 130, 238, 0.5);
+} */

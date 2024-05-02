@@ -1,0 +1,141 @@
+#card_container {
+    --card_container_pad: 30px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    overflow: hidden;
+    /* padding: 30px; */
+}
+
+.card {
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    padding: 25px;
+    transform: translateY(calc(100% + var(--card_container_pad)));
+    display: flex;
+    flex-direction: column;
+
+    transition: all .5s;
+    transition-property: color, background-color;
+
+    min-width: 40%;
+
+}
+
+.card h1, .card h3 {
+    font-family: "Play", sans-serif;
+}
+.card h1 {
+    margin: 0;
+}
+
+.card h3 {
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    color: var(--white);
+    letter-spacing: 3px;
+    
+    position: relative;
+}
+.card h3::after {
+    content: attr(data-text);
+
+    position: absolute;
+    left: 0;
+    z-index: -1;
+
+    -webkit-text-stroke: 2px var(--black);
+}
+
+.card .tagline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.card .tagline_text {
+    font-style: italic;
+    font-family: "Cutive Mono", monospace;
+}
+.card .tagline_symbol {
+    font-size: 20px;
+}
+
+.card .textContent ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+}
+.card .textContent a {
+    text-decoration: underline;
+}
+.card .textContent a:hover {
+    color: blue;
+}
+
+.card .textContent {
+    width: 85%;
+}
+.card .textContent * {
+    font-family: "Cutive Mono", monospace;
+}
+
+.card .pictureContainer {
+    --picturecontainer_height: 150px;
+
+    width: 100%;
+    height: var(--picturecontainer_height);
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 15px 0 15px 0;
+    padding-left: 35px;
+}
+.card .picture {
+    -webkit-transform: translate3d(0, 0, 0);
+    height: calc(var(--picturecontainer_height) - 30px);
+    width: calc(var(--picturecontainer_height) - 30px);
+    /* position: absolute; */
+    /* left: 60px; */
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    z-index: 2;
+}
+.card .pictureContainer .circle {
+    height: calc(var(--picturecontainer_height) - 20px);
+    width: calc(var(--picturecontainer_height) - 20px);
+    position: absolute;
+}
+
+.card .circle {
+    filter: blur(25px);
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    background-color: var(--black);
+}
+
+
+
+@media (max-width: 760px) {
+    #card_container {
+        justify-content: center;
+        grid-template-columns: repeat(1, 80%);
+    }
+
+    /* inte det finaste fixet.. */
+    .card {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    .card.appear {
+        opacity: 100%;
+    }
+}

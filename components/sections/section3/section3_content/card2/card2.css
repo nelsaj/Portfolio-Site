@@ -1,0 +1,44 @@
+#card2 {
+    position: relative;
+
+    /* animation-delay: calc(1.2s * .2); */
+    animation-delay: calc(var(--cardAnimationTime) * var(--cardDelayTime));
+}
+
+#card2 .circle {
+    height: 125px;
+    width: 125px;
+    margin: 35px;
+
+    background: var(--gradient-blue);
+
+    align-self: flex-end;
+}
+
+#barChartContainer {
+    z-index: 2;
+    /* width: 65%; */
+    height: 100px;
+
+    position: absolute;
+    bottom: 100px;
+    right: 40%;
+
+    display: flex;
+    gap: 10px;
+}
+#barChartContainer .rect {
+    width: 25px;
+    background-color: var(--black);
+    align-self: flex-end;
+
+}
+#barChartContainer .rect:nth-child(1) {height: 80%;}
+#barChartContainer .rect:nth-child(2) {height: 50%;}
+#barChartContainer .rect:nth-child(3) {height: 100%;}
+
+@media (max-width:760px) {
+    #card2 {
+        animation-delay: 0s;
+    }
+}

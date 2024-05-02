@@ -1,0 +1,94 @@
+#scrolling_text {
+    --scroll-height: 250px;
+    --scroll-pad: 15px;
+    --font-size: 15px;
+    --yellow: #ffe16a;
+    --dark-yellow: #e0a436;
+
+    padding: var(--scroll-pad);
+    background-color: var(--yellow);
+    height: var(--scroll-height);
+    width: 100vw;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: relative;
+}
+#scrolling_text * {
+    font-family: "Play", sans-serif;
+}
+
+.content {
+    word-spacing: 20px;
+    font-size: var(--font-size);
+    color: var(--dark-yellow);
+}
+
+.marquee {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: calc(var(--font-size) + 10px);
+    overflow-x: hidden;
+}
+
+.track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 60s linear infinite;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+
+#bottom_marquee .track {
+    animation-direction: reverse;
+}
+
+#blureffects {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+}
+.blureffect {
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    top: calc(var(--scroll-pad) * -1);
+}
+#blureffects .blureffect:nth-child(1) {
+    background: linear-gradient(90deg, var(--yellow) 0%, #ffef6100 100%);
+    left: calc(var(--scroll-pad) * -1);
+}
+#blureffects .blureffect:nth-child(2) {
+    right: 0;
+    background: linear-gradient(90deg, #ffef6100 0%, var(--yellow) 100%);
+    right: var(--scroll-pad);
+}
+
+#scrolling_text #mainContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+
+#scrolling_text #mainContent a {
+    /* max-height: 50%; */
+    max-width: 30%;
+    display: flex;
+}
+#scrolling_text #mainContent svg {
+    height: 100px;
+    width: 100px;
+    fill: #ffbf00;
+}

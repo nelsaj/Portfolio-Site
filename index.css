@@ -1,0 +1,120 @@
+*{
+    cursor: none;
+
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    z-index: 1;
+
+    --white: #e8dde8;
+    /* --white: #F2F2F2; */
+    --black: #3a3a3e;
+
+    --gradient-green: linear-gradient(90deg, #eef28f 0%, #6bd5b0 100%);
+    --gradient-blue: linear-gradient(19deg, #a9ecfd 0%, #e19fff 100%);
+    --gradient-pink: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+    
+    --gradient-lava: linear-gradient(90deg, rgb(231, 127, 127) 0%, rgb(239, 186, 111) 100%);
+    --gradient-lava-rotated: linear-gradient(0deg, rgb(231, 127, 127) 0%, rgb(239, 186, 111) 100%);
+    --gradient-lava-deluxe: linear-gradient(90deg, rgb(184, 120, 227) 0%, rgb(231, 127, 127) 50%, rgb(239, 186, 111) 100%);
+
+    --nav-height: 60px;
+
+    /* --ipad-size: 1030px;
+    --phone-size: 760px; */
+
+    color: var(--black);
+}
+
+body {
+    margin: 0;
+    background-color: var(--white);
+
+    transition: background-color .5s;
+}
+
+#wrapper {
+    transition: background-color .5s;
+    overflow: hidden;
+    /* position: relative; */
+}
+
+section {
+    --section-padding: 60px;
+    padding: var(--section-padding);
+}
+
+.circle {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+
+    filter: blur(90px);
+    border-radius: 50%;
+}
+
+#cursor {
+    pointer-events: none;
+    z-index: 101;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 3px solid var(--black);
+    /* mix-blend-mode: difference; */
+
+    transition: background-color 0.2s ease-in-out, border .5s;
+
+    backdrop-filter: blur(1.25px);
+    -webkit-backdrop-filter: blur(1.25px);
+}
+#cursor.mouseDown {
+    background-color: var(--black);
+}
+
+.appear {
+    animation: appear 1.2s forwards;
+}
+
+.forMobile {
+    display: none;
+}
+
+@keyframes appear {
+    from {
+        transform: translateY(100%);
+        filter: blur(10px);
+    }
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@media (max-width: 760px) {
+    /* borde ändras */
+    #cursor {
+        display: none;
+    }
+
+    section {
+        --section-padding: 30px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .forMobile {
+        display:inline;
+    }
+}
+
+/* @media (max-width:1030px) {
+    body {
+        background-color: #62efbd;
+    }
+} */
